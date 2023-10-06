@@ -83,5 +83,37 @@ void testIsSquare(const char *filename) {
     }
 }
 
+Point* createArray(int numPoints){;
+    random_device rd;
+    mt19937 gen(rd());
+    uniform_int_distribution<int> dist(0, 2000);
+    Point * points = new Point[numPoints];
+    for (int i = 0; i < numPoints; ++i) {
+        points[i] = Point(dist(gen), dist(gen));
+
+    }
+    return points;
+
+}
+
+void printArray(Point* points, int numPoints){
+    for (int i = 0; i < numPoints; ++i) {
+        points[i].print();
+    }
+}
+
+void closestPoints(Point* points, int numPoints){
+    Point closest= points[0];
+    int pos=0;
+    for (int i = 1; i < numPoints; ++i) {
+        if(distance(points[i].getX(),(points[i].getY()))<distance(closest.getX(),(closest.getY()))){
+            closest = points[i];
+            pos=i;
+        }
+
+    }
+    cout<<"Closest point : "<<closest.getX()<<" "<<closest.getY()<<" and it's index :"<<pos<<endl;
+
+}
 
 

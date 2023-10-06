@@ -26,7 +26,13 @@ int main(int argc, char** argv) {
         }
         testIsSquare("points.txt");
 
-
+        cout<<"Give me a number:";
+        int n;
+        cin>>n;
+        Point * pp = createArray(n);
+        pp = createArray(n);
+        printArray(pp,n);
+        closestPoints(pp,n);
 
 
 
