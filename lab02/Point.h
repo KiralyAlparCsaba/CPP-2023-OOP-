@@ -27,6 +27,7 @@ void testIsSquare(const char * filename);
 Point* createArray(int numPoints);
 void printArray(Point* points, int numPoints);
 void closestPoints(Point* points, int numPoints);
+void farthestPoints(Point* points, int numPoints);
 
 
 #endif //CPP_2022_POINT_H

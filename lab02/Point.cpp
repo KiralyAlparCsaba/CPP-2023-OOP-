@@ -116,4 +116,19 @@ void closestPoints(Point* points, int numPoints){
 
 }
 
+void farthestPoints(Point* points, int numPoints){
+    Point farthest= points[0];
+    int pos=0;
+    for (int i = 1; i < numPoints; ++i) {
+        if(distance(points[i].getX(),(points[i].getY()))>distance(farthest.getX(),(farthest.getY()))){
+            farthest = points[i];
+            pos=i;
+        }
+
+    }
+    cout<<"Farthest point : "<<farthest.getX()<<" "<<farthest.getY()<<" and it's index :"<<pos<<endl;
+
+}
+
+
 

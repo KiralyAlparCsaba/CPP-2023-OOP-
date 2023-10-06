@@ -33,6 +33,7 @@ int main(int argc, char** argv) {
         pp = createArray(n);
         printArray(pp,n);
         closestPoints(pp,n);
+        farthestPoints(pp,n);
 
 
 
