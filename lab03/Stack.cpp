@@ -1,5 +1,5 @@
 //
-// Created by Alpar on 2023. 10. 11..
+// Created by Alpar on 2023. 10. 11...
 //
 
 #include "Stack.h"
