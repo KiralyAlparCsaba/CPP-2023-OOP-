@@ -6,8 +6,15 @@
 #define CPP_2022_QUIZGAME_H
 
 
-class QuizGame {
+#include "Quiz.h"
 
+class QuizGame {
+private:
+    Quiz quiz;
+    int rightAnswer;
+public:
+    explicit QuizGame(string quizName, string FileName);
+    void startGame();
 };
 
 

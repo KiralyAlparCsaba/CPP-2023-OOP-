@@ -1,6 +1,6 @@
 #include <iostream>
 #include "Quiz.h"
-
+#include "QuizGame.h"
 
 
 int main() {
@@ -13,6 +13,9 @@ int main() {
             cout << "\t" << a.getText() << endl;
         }
     }
+
+    QuizGame game("labor5","C:\\Users\\Alpar\\Documents\\GitHub\\Cpp2023\\lab05\\bemenet.txt" );
+    game.startGame();
 
 
 }
