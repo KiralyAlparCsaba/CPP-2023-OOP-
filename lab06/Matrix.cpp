@@ -115,3 +115,65 @@ Matrix operator*(const Matrix &x, const Matrix &y) {
     }
     return result;
 }
+istream &operator>>(istream& is, Matrix& mat) {
+    for (int i = 0; i < mat.mRows; i++) {
+        for (int j = 0; j < mat.mCols; ++j) {
+            is >> mat.mElements[i][j];
+        }
+    }
+    return is;
+}
+ostream &operator<<(ostream& os, const Matrix& mat) {
+    for (int i = 0; i < mat.mRows; i++) {
+        for (int j = 0; j < mat.mCols; ++j) {
+            os << mat.mElements[i][j] << " ";
+        }
+        os << endl;
+    }
+    return os;
+}
+
+double *Matrix::operator[](int index) {
+    return mElements[index];
+}
+
+double *Matrix::operator[](int index) const {
+    return mElements[index];
+}
+
+Matrix &Matrix::operator=(const Matrix &mat) {
+    if(this == &mat){
+        return *this;
+    }
+    if(this->mRows != mat.mRows || this->mCols != mat.mCols){
+        throw invalid_argument("Matrix dimensions mismatch");
+    }
+    for (int i = 0; i < mRows; i++) {
+        for (int j = 0; j < mCols; ++j) {
+            this->mElements[i][j] = mat.mElements[i][j];
+        }
+    }
+    return *this;
+
+}
+
+Matrix &Matrix::operator=(Matrix &&mat) {
+    if(this == &mat){
+        return *this;
+    }
+    if(this->mElements != nullptr){
+        for (int i = 0; i < mRows; i++) {
+            delete[] this->mElements[i];
+        }
+        delete[] this->mElements;
+    }
+    this->mRows = mat.mRows;
+    this->mCols = mat.mCols;
+    this->mElements = mat.mElements;
+
+    mat.mElements = nullptr;
+    mat.mRows = 0;
+    mat.mCols = 0;
+
+    return *this;
+}
