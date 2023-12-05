@@ -23,6 +23,7 @@ public:
     int getBeosztottakNr() const;
     virtual void print(ostream &os) const;
 
+
 };
 static const string MANAGER_MUNKAKOR = "Manager";
 

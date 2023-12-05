@@ -24,3 +24,7 @@ int Alkalmazott::getID() {
     return this->id;
 }
 
+const string &Alkalmazott::getMunkakor() const {
+    return munkakor;
+}
+

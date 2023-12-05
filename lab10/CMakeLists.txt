@@ -8,4 +8,6 @@ add_executable(lab10 main_10.cpp
         Alkalmazott.h
         Manager.cpp
         Manager.h
-        Manager.h)
+        Manager.h
+        Ceg.cpp
+        Ceg.h)

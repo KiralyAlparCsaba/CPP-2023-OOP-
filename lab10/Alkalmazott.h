@@ -23,6 +23,8 @@ public:
     virtual void print(ostream &os)const override;
     int getID();
 
+    const string &getMunkakor() const;
+
 };
 
 
