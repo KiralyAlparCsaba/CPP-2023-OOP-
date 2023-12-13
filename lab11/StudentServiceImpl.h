@@ -6,6 +6,9 @@
 #define CPP_2022_STUDENTSERVICEIMPL_H
 
 
+#include "GraduationDao.h"
+#include "StudentService.h"
+
 class StudentServiceImpl : public StudentService{
     GraduationDao *dao;
 public:
